@@ -1,0 +1,32 @@
+{
+  "name": "monoture",
+  "version": "1.0.0",
+  "description": "Node.js Content Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamespegg/monoture.git"
+  },
+  "keywords": [
+    "content",
+    "cms",
+    "blog"
+  ],
+  "author": {
+    "name": "James Pegg",
+    "url": "https://github.com/jamespegg"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamespegg/monoture/issues"
+  },
+  "homepage": "https://github.com/jamespegg/monoture#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "nedb": "^1.8.0",
+    "pug": "^0.1.0"
+  }
+}
