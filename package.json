@@ -25,8 +25,18 @@
   },
   "homepage": "https://github.com/jamespegg/monoture#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
+    "bootstrap": "^4.0.0-alpha.2",
     "express": "^4.13.4",
     "nedb": "^1.8.0",
     "pug": "^0.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.1.0",
+    "load-grunt-tasks": "^3.5.0"
   }
 }

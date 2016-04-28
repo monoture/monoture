@@ -1,0 +1,19 @@
+extends ./layouts/main.pug
+
+block content
+  .row.flex-sm-1
+    .col-md-9.flex-sm
+      .card.flex-sm-1
+        ul.list-group.list-group-flush
+          each post in posts
+            li.list-group-item
+              h3.list-group-item-heading= post.title
+              p= post.body.substr(0, 300) + '...'
+
+              .btn-group.btn-group-sm
+                a(href='/monoture/post/' + post._id).btn.btn-primary-outline Edit
+                a(href='/monoture/post/' + post._id + '/delete').btn.btn-danger-outline Delete
+    .col-md-3.flex-sm
+      .card.flex-sm-1
+        .card-block
+          a(href='/monoture/post/new').btn.btn-primary-outline.btn-block New Post

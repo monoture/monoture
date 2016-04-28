@@ -1,0 +1,24 @@
+extends ./layouts/main.pug
+
+block content
+  .row.flex-sm-1
+    .col-md-6.flex-sm
+      .card.flex-sm-1.flex-sm.flex-sm-column
+        .card-block.flex-sm-1.flex-sm.flex-sm-column
+          form.flex-sm-1.flex-sm.flex-sm-column(method='post', action='/monoture/post')
+            if post._id
+              input(value=post._id, name='id', type='hidden')
+            input.form-control(value=post.title, name='title', placeholder="Title")
+            textarea.flex-sm-1.textarea-flush.m-y-1(name='body')= post.body
+            .form-group
+              input.form-control(value=post.slug, name='slug', placeholder="Slug")
+            .clearfix
+              a(href='/monoture').btn.btn-secondary.btn-sm.pull-left Cancel
+              button.btn.btn-primary-outline.btn-sm.pull-right(type='submit') Save
+    .col-md-6.flex-sm
+      .card.flex-sm-1
+        .card-block#preview
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/markdown.js/0.5.0/markdown.min.js')
+  script(src='/monoture/main.js')

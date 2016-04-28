@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title #{title}
+    link(rel='stylesheet', href='/monoture/main.css', media='screen')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Comfortaa', media='screen')
+  body.flex-sm.flex-sm-column
+    nav.navbar.navbar-dark.navbar-full.bg-inverse
+      a(href='/monoture').navbar-brand M
+      ul.nav.navbar-nav.pull-xs-right
+        li.nav-item
+          a.nav-link(href='/monoture') Posts
+        li.nav-item
+          a.nav-link(href='/monoture/settings') Settings
+
+    main.flex-sm.flex-sm-column.flex-sm-1.container-fluid
+      block content

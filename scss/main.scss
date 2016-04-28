@@ -1,0 +1,40 @@
+$body-bg : #EEE;
+$brand-yellow : #F19D04;
+$navbar-dark-color : #FFF;
+$navbar-dark-hover-color : #ededed;
+
+@import "node_modules/bootstrap/scss/bootstrap-flex";
+@import "flexbox";
+
+html, body {
+  height : 100%
+}
+
+main {
+  padding : ($grid-gutter-width / 2) 0;
+  width : 100%;
+
+  & .card {
+    margin : 0;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}
+
+.navbar-brand {
+  font-family: 'Comfortaa', cursive;
+  background : $brand-yellow;
+  width : 38px;
+  text-align: center;
+  border-radius : 20px;
+}
+
+.textarea-flush {
+  border : none;
+  resize: none;
+  font-family: "Courier New", Courier, monospace;
+
+  &:focus {
+    outline: none
+  }
+}
