@@ -5,31 +5,57 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     sass : {
-      options: {
-        sourceMap: true
+      dist : {
+        options : {
+          outputStyle : 'compressed',
+          sourceMap: true
+        },
+        files : {
+          './dist/css/main.min.css' : './scss/main.scss'
+        }
       },
-      dist : {
+      dev : {
+        options : {
+          sourceMap: true
+        },
         files : {
-          './dist/main.css' : './scss/main.scss'
+          './dist/css/main.css' : './scss/main.scss'
         }
       }
     },
-    concat : {
+    browserify : {
       dist : {
         files : {
-          './dist/main.js' : './js/*.js'
+          './dist/js/main.js' : ['./js/src/main.js']
         }
       }
     },
+    concat : {},
     uglify : {
       dist : {
         files : {
-          './dist/main.min.js' : './dist/main.js'
+          './dist/js/main.min.js' : './dist/js/main.js'
         }
+      }
+    },
+    watch : {
+      options : {
+        livereload : true
+      },
+      js : {
+        files : './js/src/**/*.js',
+        tasks : ['browserify', 'uglify']
+      },
+      sass : {
+        files : './scss/**/*.scss',
+        tasks : ['sass']
+      },
+      pug : {
+        files : './lib/views/**/*.pug'
       }
     }
   });
 
   grunt.registerTask('default', ['sass']);
-  grunt.registerTask('dist', ['sass', 'concat', 'uglify']);
+  grunt.registerTask('dist', ['sass:dist', 'browserify:dist', 'uglify:dist']);
 }
