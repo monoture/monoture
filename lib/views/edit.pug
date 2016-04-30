@@ -13,8 +13,12 @@ block content
             .form-group
               input.form-control(value=post.slug, name='slug', placeholder="Slug")
             .clearfix
-              a(href='/monoture').btn.btn-secondary.btn-sm.pull-left Cancel
-              button.btn.btn-primary-outline.btn-sm.pull-right(type='submit') Save
+              a(href='/monoture').btn.btn-secondary.btn-sm.pull-left
+                i.fa.fa-angle-left
+                |Cancel
+              button.btn.btn-primary-outline.btn-sm.pull-right(type='submit')
+               i.fa.fa-floppy-o
+               |Save
     .col-md-6.flex-sm
       .card.flex-sm-1
         .card-block#preview

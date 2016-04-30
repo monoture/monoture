@@ -11,11 +11,17 @@ html
       a(href='/monoture').navbar-brand M
       ul.nav.navbar-nav.pull-xs-right
         li.nav-item
-          a.nav-link(href='/monoture') Posts
+          a.nav-link(href='/monoture')
+            i.fa.fa-fw.fa-file-text-o
+            |Posts
         li.nav-item
-          a.nav-link(href='/monoture/settings') Settings
+          a.nav-link(href='/monoture/settings')
+            i.fa.fa-fw.fa-cog
+            |Settings
         li.nav-item
-          a.nav-link(href='/monoture/plugins') Plugins
+          a.nav-link(href='/monoture/plugins')
+            i.fa.fa-fw.fa-plug
+            |Plugins
 
     main.flex-sm.flex-sm-column.flex-sm-1.container-fluid
       block content

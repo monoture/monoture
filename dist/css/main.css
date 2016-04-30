@@ -4813,4 +4813,8 @@ main {
   .textarea-flush:focus {
     outline: none; }
 
+.nav-link > .fa,
+.btn > .fa {
+  margin-right: 6px; }
+
 /*# sourceMappingURL=main.css.map */

@@ -11,8 +11,12 @@ block content
               p= post.body.substr(0, 300) + '...'
 
               .btn-group.btn-group-sm
-                a(href='/monoture/post/' + post._id).btn.btn-primary-outline Edit
-                a(href='/monoture/post/' + post._id + '/delete').btn.btn-danger-outline Delete
+                a(href='/monoture/post/' + post._id).btn.btn-primary-outline
+                  i.fa.fa-pencil
+                  |Edit
+                a(href='/monoture/post/' + post._id + '/delete').btn.btn-danger-outline
+                  i.fa.fa-trash
+                  |Delete
     .col-md-3.flex-sm
       .card.flex-sm-1
         .card-block
