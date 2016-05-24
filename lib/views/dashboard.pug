@@ -14,6 +14,9 @@ block content
                 a(href='/monoture/post/' + post._id).btn.btn-primary-outline
                   i.fa.fa-pencil
                   |Edit
+                a(href='/post/' + post.slug, target="_blank").btn.btn-primary-outline
+                  i.fa.fa-eye
+                  |View
                 a(href='/monoture/post/' + post._id + '/delete').btn.btn-danger-outline
                   i.fa.fa-trash
                   |Delete
