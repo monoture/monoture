@@ -1,6 +1,6 @@
 var fs = require('fs');
 var user = require('../lib/models/user');
-var bcrypt = require('bcrypt');
+var bcryptjs = require('bcryptjs');
 var crypto = require('crypto');
 var passwordHash = crypto.createHash('sha256');
 var sessionHash = crypto.createHash('sha256');
@@ -44,7 +44,7 @@ if (user.findOne({username : 'admin'}, function(err, admin){
 
     console.info("Admin password is : " + pass);
 
-    bcrypt.hash(pass, 10, function(err, hash) {
+    bcryptjs.hash(pass, 10, function(err, hash) {
       if (!err) {
         user.insert({username : 'admin', password : hash}, function(err, user) {
           if (err) {
