@@ -28,6 +28,7 @@
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",
     "bootstrap": "^4.0.0-alpha.2",
+    "camo": "^0.12.1",
     "commander": "^2.9.0",
     "express": "^4.13.4",
     "express-session": "^1.13.0",

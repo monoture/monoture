@@ -1,9 +1,10 @@
 var fs = require('fs');
-var user = require('../lib/models/user');
+var User = require('../lib/models/user');
 var bcryptjs = require('bcryptjs');
 var crypto = require('crypto');
 var passwordHash = crypto.createHash('sha256');
 var sessionHash = crypto.createHash('sha256');
+var connect = require('camo').connect;
 
 console.info("Installing Monoture...");
 
@@ -31,32 +32,32 @@ for (var i = 0; i < dirs.length; i++) {
 // Create admin user
 console.info("Checking for admin user");
 
-if (user.findOne({username : 'admin'}, function(err, admin){
+connect('nedb://./app/data').then(function(db) {
+  User.findOne({username : 'admin'}).then(function(user){
+    if (user == null) {
 
-  if (!admin) {
+      // No admin user found
+      console.info("Admin user not found");
 
-    // No admin user found
-    console.info("Admin user not found");
+      // Generate random password
+      passwordHash.update(Math.random().toString());
+      var pass = passwordHash.digest('hex').substring(0, 10);
 
-    // Generate random password
-    passwordHash.update(Math.random().toString());
-    var pass = passwordHash.digest('hex').substring(0, 10);
+      console.info("Admin password is : " + pass);
 
-    console.info("Admin password is : " + pass);
+      var hash = bcryptjs.hashSync(pass, 10);
 
-    bcryptjs.hash(pass, 10, function(err, hash) {
-      if (!err) {
-        user.insert({username : 'admin', password : hash}, function(err, user) {
-          if (err) {
-            console.error("Unable to create admin account");
-          }
-        });
-      } else {
-        console.error("Unable to create admin account")
-      }
-    });
-  }
-}));
+      var admin = User.create({
+        username : 'admin',
+        password : hash
+      });
+
+      admin.save().then(function(){
+        console.info("Admin account created");
+      });
+    }
+  });
+});
 
 // Create environment file
 console.info("Checking for environment file");
@@ -71,7 +72,8 @@ if (!fs.existsSync('./env.json')) {
 
   fs.writeFile('./env.json', JSON.stringify({
     secret : secret,
-    port   : '3000'
+    port   : '3000',
+    database : 'nedb://./app/data'
   }), function (err) {
     if (err) {
       console.error("Unable to create environment file : " + err);
