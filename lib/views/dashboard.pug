@@ -1,26 +1,32 @@
 extends ./layouts/main.pug
 
 block content
-  .row.flex-sm-1
-    .col-md-9.flex-sm
-      .card.flex-sm-1
-        ul.list-group.list-group-flush
-          each post in posts
-            li.list-group-item
-              h3.list-group-item-heading= post.title
-              p= post.body.substr(0, 300) + '...'
 
-              .btn-group.btn-group-sm
-                a(href='/monoture/post/' + post._id).btn.btn-primary-outline
-                  i.fa.fa-pencil
-                  |Edit
-                a(href='/post/' + post.slug, target="_blank").btn.btn-primary-outline
-                  i.fa.fa-eye
-                  |View
-                a(href='/monoture/post/' + post._id + '/delete').btn.btn-danger-outline
-                  i.fa.fa-trash
-                  |Delete
-    .col-md-3.flex-sm
-      .card.flex-sm-1
-        .card-block
-          a(href='/monoture/post/new').btn.btn-primary-outline.btn-block New Post
+  .flex-sm-1.flex-sm.flex-sm-column
+    nav.navbar.navbar-light.navbar-full.bg-faded
+      .pull-xs-left
+        a(href='/monoture/post/new').btn.btn-primary.btn-sm
+          i.fa.fa-plus
+          |New Post
+      .pull-xs-right
+        .btn-group.btn-group-sm
+          a(href='#')#post-edit.btn.btn-secondary
+            i.fa.fa-pencil
+            |Edit
+          a(href='#')#post-publish.btn.btn-secondary
+            i.fa.fa-globe
+            |Publish
+          a(href='#', target="_blank")#post-view.btn.btn-secondary
+            i.fa.fa-eye
+            |View
+          a(href='#')#post-delete.btn.btn-danger
+            i.fa.fa-trash
+            |Delete
+    .flex-sm-1.flex-sm
+      .list-group.list-group-flush.flex-sm-1.overflow-y
+        each post in posts
+          a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
+            .pull-xs-right
+              i.fa.fa-chevron-right
+      .flex-sm-3.flex-sm.flex-sm-column.b-l-1
+        .flex-sm-1.p-a-1.overflow-y#preview

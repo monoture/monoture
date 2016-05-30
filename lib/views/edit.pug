@@ -1,24 +1,41 @@
 extends ./layouts/main.pug
 
 block content
-  .row.flex-sm-1
-    .col-md-6.flex-sm
-      .card.flex-sm-1.flex-sm.flex-sm-column
-        .card-block.flex-sm-1.flex-sm.flex-sm-column
-          form.flex-sm-1.flex-sm.flex-sm-column(method='post', action='/monoture/post')
-            if post._id
-              input(value=post._id, name='id', type='hidden')
-            input.form-control(value=post.title, name='title', placeholder="Title")#title
-            textarea.flex-sm-1.textarea-flush.m-y-1(name='body', data-spy='markdown', data-target='#preview', data-title='#title')= post.body
+  form(method='post', action='/monoture/post').flex-sm-1.flex-sm.flex-sm-column
+
+    //- Post ID
+    if post._id
+      input(value=post._id, name='id', type='hidden')
+
+    nav.navbar.navbar-light.navbar-full.bg-faded.flex-sm
+
+      input.form-control-minimal.flex-sm-1(value=post.title, name='title', placeholder="Title")
+
+      .btn-group.pull-right
+        a(href='/monoture').btn.btn-secondary.btn-sm
+          i.fa.fa-angle-left
+          |Cancel
+
+        a(href='#', data-toggle='modal', data-target='#properties').btn.btn-secondary.btn-sm.pull-right
+          i.fa.fa-fw.fa-cog
+          |Properties
+
+        button.btn.btn-primary.btn-sm(type='submit')
+          i.fa.fa-floppy-o
+          |Save
+
+    .flex-sm-1.flex-sm
+      .flex-sm-1.flex-sm
+        textarea.flex-sm-1.textarea-flush.p-a-1(name='body', data-spy='markdown', data-target='#preview', placeholder='Start writing your blog post here.')= post.body
+      .flex-sm-1.p-a-1.b-l-5.b-primary.overflow-y#preview
+
+    .modal.fade#properties
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h5.modal-title Properties
+          .modal-body.clearfix
             .form-group
+              label Slug
               input.form-control(value=post.slug, name='slug', placeholder="Slug")
-            .clearfix
-              a(href='/monoture').btn.btn-secondary.btn-sm.pull-left
-                i.fa.fa-angle-left
-                |Cancel
-              button.btn.btn-primary-outline.btn-sm.pull-right(type='submit')
-               i.fa.fa-floppy-o
-               |Save
-    .col-md-6.flex-sm
-      .card.flex-sm-1
-        .card-block#preview
+            button.btn.btn-primary.btn-sm.pull-right(data-dismiss="modal") Done
