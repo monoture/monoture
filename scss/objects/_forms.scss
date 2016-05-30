@@ -1,0 +1,19 @@
+.form-control-minimal {
+  background : transparent;
+  border : none;
+  margin-right : 1em;
+
+  &:focus {
+    outline : none;
+  }
+}
+
+.textarea-flush {
+  border : none;
+  resize: none;
+  font-family: "Courier New", Courier, monospace;
+
+  &:focus {
+    outline: none
+  }
+}

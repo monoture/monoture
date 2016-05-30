@@ -1,45 +1,26 @@
-$body-bg : #EEE;
-$brand-yellow : #F19D04;
-$navbar-dark-color : #FFF;
-$navbar-dark-hover-color : #ededed;
+// Settings
+@import "settings/variables";
 
+// Tools
+@import "mixins/flexbox";
+@import "mixins/border";
+
+// Bootstrap (Flex)
 @import "node_modules/bootstrap/scss/bootstrap-flex";
-@import "flexbox";
 
-html, body {
-  height : 100%
-}
+// Utilities
+@import "utilities/flexbox";
+@import "utilities/background";
+@import "utilities/border";
+@import "utilities/general";
 
-main {
-  padding : ($grid-gutter-width / 2) 0;
-  width : 100%;
+// Base
+@import "base";
 
-  & .card {
-    margin : 0;
-    overflow: hidden;
-    overflow-y: auto;
-  }
-}
+// Objects
+@import "objects/buttons";
+@import "objects/forms";
 
-.navbar-brand {
-  font-family: 'Comfortaa', cursive;
-  background : $brand-yellow;
-  width : 38px;
-  text-align: center;
-  border-radius : 20px;
-}
-
-.textarea-flush {
-  border : none;
-  resize: none;
-  font-family: "Courier New", Courier, monospace;
-
-  &:focus {
-    outline: none
-  }
-}
-
-.nav-link > .fa,
-.btn > .fa {
-  margin-right : 6px;
-}
+// Components
+@import "components/navbar";
+@import "components/fontawesome";

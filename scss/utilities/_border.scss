@@ -1,0 +1,18 @@
+
+@include make-border();
+
+.b-primary {
+  @include border-variant($brand-primary);
+}
+.b-info {
+  @include border-variant($brand-info);
+}
+.b-success {
+  @include border-variant($brand-success);
+}
+.b-warning {
+  @include border-variant($brand-warning);
+}
+.b-danger {
+  @include border-variant($brand-danger);
+}

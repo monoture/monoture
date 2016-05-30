@@ -1,0 +1,5 @@
+@include bg-variant('.bg-teal', $brand-teal);
+@include bg-variant('.bg-pink', $brand-pink);
+@include bg-variant('.bg-blue', $brand-blue);
+@include bg-variant('.bg-navy', $brand-navy);
+@include bg-variant('.bg-white', #FFF);

@@ -1,0 +1,26 @@
+
+@mixin make-border() {
+
+  @for $width from 1 through 10 {
+    .b-l-#{$width} {
+      border-left : #{$width}px solid $gray-lighter;
+    }
+
+    .b-r-#{$width} {
+      border-right : #{$width}px solid $gray-lighter;
+    }
+
+    .b-t-#{$width} {
+      border-top : #{$width}px solid $gray-lighter;
+    }
+
+    .b-b-#{$width} {
+      border-bottom : #{$width}px solid $gray-lighter;
+    }
+  }
+
+}
+
+@mixin border-variant($colour) {
+  border-color: $colour;
+}
