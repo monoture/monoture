@@ -70,11 +70,17 @@ if (!fs.existsSync('./env.json')) {
   sessionHash.update(Math.random().toString());
   var secret = sessionHash.digest('hex');
 
-  fs.writeFile('./env.json', JSON.stringify({
+  var defaultEnv = {
     secret : secret,
     port   : '3000',
-    database : 'nedb://./app/data'
-  }), function (err) {
+    database : 'nedb://./app/data',
+    site : {
+      name : 'My Blog'
+    },
+    plugin : {}
+  }
+
+  fs.writeFile('./env.json', JSON.stringify(defaultEnv), function (err) {
     if (err) {
       console.error("Unable to create environment file : " + err);
     }
