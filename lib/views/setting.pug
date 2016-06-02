@@ -1,0 +1,24 @@
+extends ./layouts/main.pug
+
+block content
+  form(method='post', action='/monoture/settings').flex-sm-1.flex-sm
+    .flex-sm-1
+      nav.navbar.navbar-light.navbar-full.bg-faded
+        span.lead Global Settings
+        .btn-group.pull-right
+          a(href='/monoture').btn.btn-secondary.btn-sm
+            i.fa.fa-angle-left
+            |Cancel
+          button.btn.btn-primary.btn-sm.pull-right(type='submit')
+            i.fa.fa-floppy-o
+            |Save
+
+      .p-a-1
+        .form-group
+          label.control-label Website Name
+          input.form-control(name='siteName', value=site.name)
+    .flex-sm-1.b-l-5.b-primary
+      nav.navbar.navbar-light.navbar-full.bg-faded
+        span.lead Plugin Settings
+
+      .p-a-1
