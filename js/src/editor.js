@@ -14,8 +14,8 @@ module.exports = $(function(){
 
     e.preventDefault();
 
-    $('[data-spy="markdown-list"] .fa-chevron-right').hide();
-    $(this).find('.fa-chevron-right').show();
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
 
     var $target = $($(this).data('target'));
     var post = $(this).data('post');
