@@ -3,30 +3,50 @@ extends ./layouts/main.pug
 block content
 
   .flex-sm-1.flex-sm.flex-sm-column
-    nav.navbar.navbar-light.navbar-full.bg-faded
-      .pull-xs-left
-        a(href='/monoture/post/new').btn.btn-primary.btn-sm
-          i.fa.fa-plus
-          |New Post
-      .pull-xs-right
-        .btn-group.btn-group-sm
-          a(href='#')#post-edit.btn.btn-secondary
-            i.fa.fa-pencil
-            |Edit
-          a(href='#')#post-publish.btn.btn-secondary
-            i.fa.fa-globe
-            |Publish
-          a(href='#', target="_blank")#post-view.btn.btn-secondary
-            i.fa.fa-eye
-            |View
-          a(href='#')#post-delete.btn.btn-danger
-            i.fa.fa-trash
-            |Delete
     .flex-sm-1.flex-sm
-      .list-group.list-group-flush.flex-sm-1.overflow-y
+      .list-group.list-group-flush.list-group-inverse.flex-sm-1.overflow-y.scrollbar-inverse
         each post in posts
           a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
             .pull-xs-right
               i.fa.fa-chevron-right
-      .flex-sm-3.flex-sm.flex-sm-column.b-l-1
+
+          a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
+            .pull-xs-right
+              i.fa.fa-chevron-right
+
+          a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
+            .pull-xs-right
+              i.fa.fa-chevron-right
+
+          a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
+            .pull-xs-right
+              i.fa.fa-chevron-right
+
+          a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
+            .pull-xs-right
+              i.fa.fa-chevron-right
+
+          a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
+            .pull-xs-right
+              i.fa.fa-chevron-right
+      .flex-sm-4.flex-sm.flex-sm-column.b-l-1
+        nav.navbar.navbar-light.navbar-full.bg-faded
+          .pull-xs-left
+            a(href='/monoture/post/new').btn.btn-primary.btn-sm
+              i.fa.fa-plus
+              |New Post
+          .pull-xs-right
+            .btn-group.btn-group-sm
+              a(href='#')#post-edit.btn.btn-secondary
+                i.fa.fa-pencil
+                |Edit
+              a(href='#')#post-publish.btn.btn-secondary
+                i.fa.fa-globe
+                |Publish
+              a(href='#', target="_blank")#post-view.btn.btn-secondary
+                i.fa.fa-eye
+                |View
+              a(href='#')#post-delete.btn.btn-danger
+                i.fa.fa-trash
+                |Delete
         .flex-sm-1.p-a-1.overflow-y#preview
