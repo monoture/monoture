@@ -19,3 +19,11 @@ Node.js Content Platform
 9. Run `monoture run` to run the application
 10. Access Monoture on `http://localhost:3000`
 11. Access the Monoture admin dashboard on `http://localhost:3000/monoture/`
+12. 
+
+# Screenshots
+## Dashboard
+![dashboard](https://cloud.githubusercontent.com/assets/894505/15801760/1c990384-2a97-11e6-9765-1dd5bef9c6d5.png)
+## Editor
+![editor](https://cloud.githubusercontent.com/assets/894505/15801761/1c9d5ec0-2a97-11e6-9f8d-f7147d022e85.png)
+
