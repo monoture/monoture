@@ -4,6 +4,7 @@
 // Tools
 @import "mixins/flexbox";
 @import "mixins/border";
+@import "mixins/scrollbar";
 
 // Bootstrap (Flex)
 @import "node_modules/bootstrap/scss/bootstrap-flex";
@@ -12,6 +13,7 @@
 @import "utilities/flexbox";
 @import "utilities/background";
 @import "utilities/border";
+@import "utilities/scrollbar";
 @import "utilities/general";
 
 // Base

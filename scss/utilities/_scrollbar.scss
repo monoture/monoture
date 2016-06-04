@@ -1,0 +1,3 @@
+@include scrollbar-variant('.scrollbar-white', #FFF, $gray-light);
+@include scrollbar-variant('.scrollbar-teal', #FFF, $brand-teal);
+@include scrollbar-variant('.scrollbar-inverse', $gray, lighten($gray, 5%));

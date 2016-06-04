@@ -1,0 +1,38 @@
+@mixin scrollbar($scrollbar, $button) {
+
+  &::-webkit-scrollbar {
+    background-color: $scrollbar;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+
+  }
+
+  &::-webkit-scrollbar-track-piece {
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $button;
+    border-radius : 20px;
+    border: 3px solid $scrollbar;
+  }
+
+  &::-webkit-scrollbar-corner {
+
+  }
+
+  &::-webkit-resizer {
+
+  }
+}
+
+@mixin scrollbar-variant($class, $scrollbar, $button) {
+  #{$class} {
+    @include scrollbar($scrollbar, $button);
+  }
+}
