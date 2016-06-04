@@ -1,0 +1,20 @@
+.list-group-inverse {
+  color: $gray-lighter;
+  background-color: $gray-dark;
+
+  .list-group-item {
+    color: $gray-lighter;
+    background-color: $gray-dark;
+    border-color: $gray;
+  }
+
+  a.list-group-item,
+  button.list-group-item {
+    // Hover state
+    @include hover-focus {
+      color: $gray-lighter;
+      text-decoration: none;
+      background-color: $gray;
+    }
+  }
+}
