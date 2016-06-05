@@ -4,9 +4,13 @@ block content
 
   .flex-sm-1.flex-sm.flex-sm-column
     .flex-sm-1.flex-sm
+
+      //- Sidebar
       .list-group.list-group-flush.list-group-inverse.flex-sm-1.overflow-y.scrollbar-inverse
         each post in posts
           a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
+
+      //- Content
       .flex-sm-4.flex-sm.flex-sm-column
         nav.navbar.navbar-light.navbar-full.bg-faded
           .pull-xs-left
@@ -27,4 +31,6 @@ block content
               a(href='#')#post-delete.btn.btn-danger
                 i.fa.fa-trash
                 |Delete
+
+        //- Preview
         .flex-sm-1.p-a-1.overflow-y.scrollbar-teal#preview
