@@ -15,7 +15,8 @@
   }
 
   a.list-group-item,
-  button.list-group-item {
+  button.list-group-item,
+  .list-group-item[data-toggle="tab"] {
     // Hover state
     @include hover-focus {
       color: $gray-lighter;
@@ -39,4 +40,8 @@
   	border-width: 15px;
   	margin-top: -15px;
   }
+}
+
+.list-group-item[data-toggle="tab"] {
+  cursor : pointer;
 }

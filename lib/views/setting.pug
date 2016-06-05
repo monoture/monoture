@@ -1,24 +1,37 @@
 extends ./layouts/main.pug
 
 block content
-  form(method='post', action='/monoture/settings').flex-sm-1.flex-sm
-    .flex-sm-1
-      nav.navbar.navbar-light.navbar-full.bg-faded
-        span.lead Global Settings
-        .btn-group.pull-right
-          a(href='/monoture').btn.btn-secondary.btn-sm
-            i.fa.fa-angle-left
-            |Cancel
-          button.btn.btn-primary.btn-sm.pull-right(type='submit')
-            i.fa.fa-floppy-o
-            |Save
 
-      .p-a-1
-        .form-group
-          label.control-label Website Name
-          input.form-control(name='siteName', value=site.name)
-    .flex-sm-1.b-l-5.b-primary
-      nav.navbar.navbar-light.navbar-full.bg-faded
-        span.lead Plugin Settings
+  .flex-sm-1.flex-sm
 
-      .p-a-1
+    //- Sidebar
+    ul.list-group.list-group-flush.list-group-inverse.flex-sm-1.overflow-y.scrollbar-inverse
+      li.list-group-item.active(data-toggle="tab", data-target="#general") General
+      li.list-group-item(data-toggle="tab", data-target="#plugin") Plugin
+      li.list-group-item(data-toggle="tab", data-target="#user") Users
+
+    //- Content
+    .flex-sm-4.flex-sm.flex-sm-column
+      .tab-content.p-a-1
+
+        //- General Settings
+        .tab-pane.active.fade.in#general
+          h2 General Settings
+          .row
+            .col-xs-12.col-md-8.col-xl-6
+              form(method='post', action='/monoture/settings')
+                .form-group
+                  label.control-label Website Name
+                  input.form-control(name='siteName', value=site.name)
+
+                button.btn.btn-primary.btn-sm.pull-right(type='submit')
+                  i.fa.fa-floppy-o
+                  |Save
+
+        //- Plugin Settings
+        .tab-pane.fade#plugin
+          h2 Plugin Settings
+
+        //- User Settings
+        .tab-pane.fade#user
+          h2 User Settings
