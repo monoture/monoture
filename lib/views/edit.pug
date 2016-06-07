@@ -1,41 +1,38 @@
 extends ./layouts/main.pug
 
 block content
-  form(method='post', action='/monoture/post').flex-sm-1.flex-sm.flex-sm-column
+  form(method='post', action='/monoture/post').flex-sm-1.flex-sm
+
+    .flex-sm-1.bg-inverse.overflow-y.scrollbar-inverse
+      .p-a-1
+        h4 Properties
+        .form-group
+          label Published
+          select.form-control.form-control-inverse(name='published')
+            option(value="true", selected=post.published) Yes
+            option(value="false", selected=!post.published) No
+        .form-group
+          label Slug
+          input.form-control.form-control-inverse(value=post.slug, name='slug', placeholder="Slug")
 
     //- Post ID
     if post._id
       input(value=post._id, name='id', type='hidden')
 
-    nav.navbar.navbar-light.navbar-full.bg-faded.flex-sm
+    .flex-sm-4.flex-sm.flex-sm-column
+      nav.navbar.navbar-light.navbar-full.bg-faded.flex-sm
 
-      input.form-control-minimal.flex-sm-1(value=post.title, name='title', placeholder="Title", maxlength="120")
+        input.form-control-minimal.flex-sm-1(value=post.title, name='title', placeholder="Title", maxlength="120")
 
-      .btn-group.pull-right
-        a(href='/monoture').btn.btn-secondary.btn-sm
-          i.fa.fa-angle-left
-          |Cancel
+        .btn-group.pull-right
+          a(href='/monoture').btn.btn-secondary.btn-sm
+            i.fa.fa-angle-left
+            |Cancel
 
-        a(href='#', data-toggle='modal', data-target='#properties').btn.btn-secondary.btn-sm.pull-right
-          i.fa.fa-fw.fa-cog
-          |Properties
-
-        button.btn.btn-primary.btn-sm(type='submit')
-          i.fa.fa-floppy-o
-          |Save
-
-    .flex-sm-1.flex-sm
+          button.btn.btn-primary.btn-sm(type='submit')
+            i.fa.fa-floppy-o
+            |Save
       .flex-sm-1.flex-sm
-        textarea.flex-sm-1.textarea-flush.p-a-1.scrollbar-teal(name='body', data-spy='markdown', data-target='#preview', placeholder='Start writing your blog post here.')= post.body
-      .flex-sm-1.p-a-1.b-l-5.overflow-y.scrollbar-teal#preview
-
-    .modal.fade#properties
-      .modal-dialog
-        .modal-content
-          .modal-header
-            h5.modal-title Properties
-          .modal-body.clearfix
-            .form-group
-              label Slug
-              input.form-control(value=post.slug, name='slug', placeholder="Slug")
-            button.btn.btn-primary.btn-sm.pull-right(data-dismiss="modal") Done
+        .flex-sm-1.flex-sm
+          textarea.flex-sm-1.textarea-flush.p-a-1.scrollbar-teal(name='body', data-spy='markdown', data-target='#preview', placeholder='Start writing your blog post here.')= post.body
+        .flex-sm-1.p-a-1.b-l-5.overflow-y.scrollbar-teal#preview

@@ -17,3 +17,9 @@
     outline: none
   }
 }
+
+.form-control-inverse {
+  background : $gray;
+  color : $gray-lighter;
+  border-color : lighten($gray, 5%);
+}
