@@ -24,6 +24,9 @@ block content
 
         input.form-control-minimal.flex-sm-1(value=post.title, name='title', placeholder="Title", maxlength="120")
 
+        a(href='#', data-toggle="modal", data-target="#markdown-helper").m-r-1
+          i.fa.fa-2x.fa-question-circle-o
+
         .btn-group.pull-right
           a(href='/monoture').btn.btn-secondary.btn-sm
             i.fa.fa-angle-left
@@ -36,3 +39,57 @@ block content
         .flex-sm-1.flex-sm
           textarea.flex-sm-1.textarea-flush.p-a-1.scrollbar-teal(name='body', data-spy='markdown', data-target='#preview', placeholder='Start writing your blog post here.')= post.body
         .flex-sm-1.p-a-1.b-l-5.overflow-y.scrollbar-teal#preview
+
+    .modal.fade#markdown-helper
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-body
+            h3 Writing content
+            p Monoture uses <code>markdown</code> to format and style your content. There are just a few simply rules to learn to get you started;
+
+            h4 Headings
+            p To write a heading, just start a new line with a hash (<code>#</code>). The number of hashes you use determine how big the header is;
+
+            pre
+              code
+                |# Heading 1 (Larger)
+                |## Heading 2
+                |### Heading 3
+                |#### Heading 4
+                |##### Heading 5
+                |###### Heading 6 (Smaller)
+
+            h4 Emphasis
+            p Text can be italicised, bolded or both;
+            pre
+              code
+                |*This text will be italic*
+                |_This will also be italic_
+
+                |**This text will be bold**
+                |__This will also be bold__
+
+                |_You **can** combine them_
+
+            h4 Lists
+            p Lists are a great way to break up content. It's as simple as putting a star (<code>*</code>) for bullet lists or <code>1.</code> for a numbered list;
+
+            pre
+              code
+                |* Bullet list item 1
+                |* Bullet list item 2
+                |* Bullet list item 3
+            pre
+              code
+                |1. Numbered list item 1
+                |2. Numbered list item 2
+                |3. Numbered list item 3
+
+            h4 Images
+            p Images are a little bit more tricky than headings and lists. They take the following format;
+            pre
+              code
+                |![alternative text](image url "Title text")
+
+            hr
+            p A more in-depth Markdown cheat sheet can be found on #[a(href='https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet') on GitHub].
