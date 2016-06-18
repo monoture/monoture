@@ -25,12 +25,12 @@ const DashboardList = (($) => {
       this.element.siblings().removeClass('active');
       this.element.addClass('active');
 
-      $.get('/monoture/post/' + this.post + '.json', function(post){
+      $.get('/dashboard/post/' + this.post + '.json', function(post){
         that.target.html('<h1>' + post.title + '</h1>' + markdown.toHTML(post.body));
-        that.controls.find('[data-control="edit"]').prop('href', '/monoture/post/' + post._id);
-        that.controls.find('[data-control="publish"]').prop('href', '/monoture/post/' + post._id + '/publish');
+        that.controls.find('[data-control="edit"]').prop('href', '/dashboard/post/' + post._id);
+        that.controls.find('[data-control="publish"]').prop('href', '/dashboard/post/' + post._id + '/publish');
         that.controls.find('[data-control="view"]').prop('href', '/post/' + post.slug);
-        that.controls.find('[data-control="delete"]').prop('href', '/monoture/post/' + post._id + '/delete');
+        that.controls.find('[data-control="delete"]').prop('href', '/dashboard/post/' + post._id + '/delete');
 
         if (post.published) {
           that.controls.find('[data-control="publish"]').html('<i class="fa fa-globe"></i>Unpublish');
