@@ -8,7 +8,7 @@ block content
       //- Sidebar
       .list-group.list-group-flush.list-group-inverse.flex-sm-1.overflow-y.scrollbar-inverse
         each post in posts
-          a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview")= post.title
+          a.list-group-item(href='#', data-post=post._id, data-spy="markdown-list", data-target="#preview", data-controls="#controls")= post.title
 
       //- Content
       .flex-sm-4.flex-sm.flex-sm-column
@@ -18,17 +18,17 @@ block content
               i.fa.fa-plus
               |New Post
           .pull-xs-right
-            .btn-group.btn-group-sm
-              a(href='#')#post-edit.btn.btn-secondary
+            .btn-group.btn-group-sm#controls
+              a(href='#', data-control="edit").btn.btn-secondary
                 i.fa.fa-pencil
                 |Edit
-              a(href='#')#post-publish.btn.btn-secondary
+              a(href='#', data-control="publish").btn.btn-secondary
                 i.fa.fa-globe
                 |Publish
-              a(href='#', target="_blank")#post-view.btn.btn-secondary
+              a(href='#', target="_blank", data-control="view").btn.btn-secondary
                 i.fa.fa-eye
                 |View
-              a(href='#')#post-delete.btn.btn-danger
+              a(href='#', data-control="delete").btn.btn-danger
                 i.fa.fa-trash
                 |Delete
 

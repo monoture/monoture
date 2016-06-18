@@ -25,6 +25,9 @@ module.exports = function(grunt) {
     },
     browserify : {
       dist : {
+        options : {
+          transform : ['es6ify']
+        },
         files : {
           './dist/js/main.js' : ['./js/src/main.js']
         }
