@@ -1,7 +1,7 @@
 extends ./layouts/main.pug
 
 block content
-  form(method='post', action='/monoture/post').flex-sm-1.flex-sm
+  form(method='post', action='/dashboard/post').flex-sm-1.flex-sm
 
     .flex-sm-1.bg-inverse.overflow-y.scrollbar-inverse
       .p-a-1
@@ -28,7 +28,7 @@ block content
           i.fa.fa-2x.fa-question-circle-o
 
         .btn-group.pull-right
-          a(href='/monoture').btn.btn-secondary.btn-sm
+          a(href='/dashboard').btn.btn-secondary.btn-sm
             i.fa.fa-angle-left
             |Cancel
 
