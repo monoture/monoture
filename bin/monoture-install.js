@@ -1,5 +1,5 @@
 var fs = require('fs');
-var User = require('../lib/models/user');
+var User = require('../lib/controllers/services/user/model');
 var bcryptjs = require('bcryptjs');
 var crypto = require('crypto');
 var passwordHash = crypto.createHash('sha256');
