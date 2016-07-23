@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs');
 var User = require('../lib/controllers/services/user/model');
 var bcryptjs = require('bcryptjs');

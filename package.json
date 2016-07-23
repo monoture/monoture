@@ -1,11 +1,9 @@
 {
   "name": "monoture",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "description": "Node.js Content Platform",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jamespegg/monoture.git"
@@ -15,10 +13,7 @@
     "cms",
     "blog"
   ],
-  "author": {
-    "name": "James Pegg",
-    "url": "https://github.com/jamespegg"
-  },
+  "author": "James Pegg <jamescpegg@gmail.com> (http://jamespegg.co.uk)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jamespegg/monoture/issues"
@@ -32,6 +27,7 @@
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "express-validator": "^2.20.8",
+    "markdown-it": "^7.0.0",
     "nedb": "^1.8.0",
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",
