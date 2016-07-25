@@ -6,7 +6,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamespegg/monoture.git"
+    "url": "git+https://github.com/monoture/monoture.git"
   },
   "keywords": [
     "content",
@@ -16,9 +16,9 @@
   "author": "James Pegg <jamescpegg@gmail.com> (http://jamespegg.co.uk)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jamespegg/monoture/issues"
+    "url": "https://github.com/monoture/monoture/issues"
   },
-  "homepage": "https://github.com/jamespegg/monoture#readme",
+  "homepage": "https://github.com/monoture/monoture#readme",
   "dependencies": {
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",
