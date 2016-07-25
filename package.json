@@ -1,6 +1,6 @@
 {
   "name": "monoture",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Node.js Content Platform",
   "main": "index.js",
   "scripts": {},
@@ -28,6 +28,8 @@
     "express-session": "^1.13.0",
     "express-validator": "^2.20.8",
     "markdown-it": "^7.0.0",
+    "monoture-dashboard": "0.0.1",
+    "monoture-theme": "0.0.1",
     "nedb": "^1.8.0",
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",
