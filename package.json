@@ -1,6 +1,6 @@
 {
   "name": "monoture",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Node.js Content Platform",
   "main": "index.js",
   "scripts": {},
