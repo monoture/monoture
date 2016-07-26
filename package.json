@@ -1,7 +1,7 @@
 {
   "name": "monoture",
   "version": "0.0.7",
-  "description": "Node.js Content Platform",
+  "description": "Simple blogging on Node.js",
   "main": "index.js",
   "scripts": {},
   "repository": {
