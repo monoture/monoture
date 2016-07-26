@@ -1,6 +1,6 @@
 {
   "name": "monoture",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple blogging on Node.js",
   "main": "index.js",
   "scripts": {},
