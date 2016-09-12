@@ -28,7 +28,7 @@
     "express-session": "^1.13.0",
     "express-validator": "^2.20.8",
     "markdown-it": "^7.0.0",
-    "monoture-dashboard": "^0.1.0",
+    "monoture-dashboard": "^0.1.1",
     "monoture-theme": "^0.1.0",
     "nedb": "^1.8.0",
     "passport": "^0.3.2",
