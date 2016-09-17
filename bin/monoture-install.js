@@ -79,6 +79,12 @@ if (!fs.existsSync('./env.json')) {
     site : {
       name : 'My Blog'
     },
+    meta : {
+      titlePrefix : '',
+      titleSuffix : '',
+      homeTitle : '',
+      homeDescription : ''
+    },
     plugin : {}
   }
 
