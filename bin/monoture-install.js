@@ -64,7 +64,7 @@ connect('nedb://./app/data').then(function(db) {
 // Create environment file
 console.info("Checking for environment file");
 
-if (!fs.existsSync('./env.json')) {
+if (!fs.existsSync('./.env')) {
 
   console.info("Creating environment file");
 
@@ -72,23 +72,17 @@ if (!fs.existsSync('./env.json')) {
   sessionHash.update(Math.random().toString());
   var secret = sessionHash.digest('hex');
 
-  var defaultEnv = {
-    secret : secret,
-    port   : '3000',
-    database : 'nedb://./app/data',
-    site : {
-      name : 'My Blog'
-    },
-    meta : {
-      titlePrefix : '',
-      titleSuffix : '',
-      homeTitle : '',
-      homeDescription : ''
-    },
-    plugin : {}
-  }
+  var defaultEnv = "";
+  defaultEnv += `SECRET=${secret}\n`;
+  defaultEnv += `PORT=3001\n`;
+  defaultEnv += `DATABASE=nedb://./app/data\n`;
+  defaultEnv += `SITE_NAME=My Blog\n`;
+  defaultEnv += `TITLE_PREFIX=\n`;
+  defaultEnv += `TITLE_SUFFIX=\n`;
+  defaultEnv += `HOME_TITLE=My Blog\n`;
+  defaultEnv += `HOME_DESCRIPTION=My Blog\n`;
 
-  fs.writeFile('./env.json', JSON.stringify(defaultEnv), function (err) {
+  fs.writeFile('./.env', defaultEnv, function (err) {
     if (err) {
       console.error("Unable to create environment file : " + err);
     }
